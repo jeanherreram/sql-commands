@@ -1,0 +1,75 @@
+Start the CLI:
+mysql-ctl cli; 
+
+
+List available databases:
+SHOW DATABASES;
+
+
+Create a database:
+CREATE DATABASE pets; 
+
+
+Use specific database:
+USE pets;
+
+
+Drop a database:
+DROP DATABASE pets;
+
+
+Create table:
+CREATE TABLE cats
+  (
+    name VARCHAR(100),
+    age INT
+  );
+
+
+Drop table:
+DROP TABLE cats;
+
+
+Insert data:
+INSERT INTO cats(name, age) VALUES ('Jetson', 7);
+
+
+Show all data: 
+SELECT * FROM cats;
+
+
+Create table with constraints:
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255) DEFAULT 'no middle name provided',
+    age INT NOT NULL,
+    current_status VARCHAR(255) NOT NULL DEFAULT 'employed'
+);
+
+
+Using SELECT:
+SELECT age, breed, name, cat_id FROM cats; 
+
+
+Using WHERE:
+SELECT * FROM cats WHERE age=4; 
+
+
+Using AS(aliases):
+SELECT name AS 'cat name', breed AS 'kitty breed' FROM cats;
+
+
+Update data:
+UPDATE cats SET breed='Shorthair' WHERE breed='Tabby';
+
+
+Delete data:
+DELETE FROM cats WHERE name='Egg';
+
+
+
+
+
+
