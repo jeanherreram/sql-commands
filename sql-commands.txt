@@ -69,6 +69,43 @@ Delete data:
 DELETE FROM cats WHERE name='Egg';
 
 
+Using CONCAT:
+SELECT CONCAT(author_fname, ' ', author_lname) AS 'full name' FROM books;
+
+
+Using CONCAT with several aliases:
+SELECT author_fname AS first, author_lname AS last, CONCAT(author_fname, ', ', author_lname) AS 'full_name' FROM books;
+
+
+Using CONCAT_WS:
+SELECT CONCAT_WS(' - ', title, author_fname, author_lname) FROM books;
+
+
+Using SUBSTRING:
+SELECT SUBSTRING(title, 1, 10) AS 'short title' FROM books;
+
+
+Combining CONCAT and SUBSTRING:
+SELECT CONCAT(SUBSTRING(title, 1, 10), '...') AS 'short title' FROM books;
+
+
+Using REPLACE:
+SELECT REPLACE(title, 'e ', '3') FROM books;
+
+
+Using REVERSE:
+SELECT REVERSE(author_fname) FROM books;
+ 
+
+ Using CHAR_LENGTH:
+ SELECT author_lname, CHAR_LENGTH(author_lname) AS 'length' FROM books;
+
+
+ Using UPPER and LOWER:
+ SELECT UPPER(title) FROM books;
+
+
+
 
 
 
