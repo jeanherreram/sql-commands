@@ -97,13 +97,33 @@ Using REVERSE:
 SELECT REVERSE(author_fname) FROM books;
  
 
- Using CHAR_LENGTH:
- SELECT author_lname, CHAR_LENGTH(author_lname) AS 'length' FROM books;
+Using CHAR_LENGTH:
+SELECT author_lname, CHAR_LENGTH(author_lname) AS 'length' FROM books;
 
 
- Using UPPER and LOWER:
- SELECT UPPER(title) FROM books;
+Using UPPER and LOWER:
+SELECT UPPER(title) FROM books;
 
+
+Using DISTINCT:
+SELECT DISTINCT author_fname, author_lname FROM books;
+
+
+Using ORDER BY:
+SELECT title, released_year, pages FROM books ORDER BY released_year;
+
+
+USING ORDER BY with ASC or DESC and multiple queries:
+SELECT author_fname, author_lname FROM books ORDER BY author_lname, 1 DESC;
+
+
+Using LIMIT:
+SELECT title, released_year FROM books ORDER BY released_year LIMIT 5;
+
+
+Using LIKE:
+SELECT title, author_fname FROM books WHERE author_fname LIKE '%da%';
+SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '____';
 
 
 
