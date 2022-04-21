@@ -140,6 +140,8 @@ SELECT CONCAT('In ', released_year, ' ', COUNT(*), ' book(s) released') AS year 
 
 Using MIN and MAX:
 SELECT MIN(released_year) FROM books;
+SELECT author_fname, author_lname, MIN(released_year) FROM books GROUP BY author_lname, author_fname;
+SELECT CONCAT(author_fname, ' ', author_lname) AS author, MAX(pages) AS 'longest book' FROM books GROUP BY author_lname, author_fname;
 
 
 Using subqueries:
@@ -147,4 +149,11 @@ SELECT title, pages FROM books
 WHERE pages = (SELECT Max(pages) FROM books); 
 
 
+Using SUM:
+SELECT SUM(released_year) FROM books;
+SELECT author_fname, author_lname, SUM(pages) FROM books GROUP BY author_lname, author_fname;
 
+
+Using AVG:
+SELECT released_year, AVG(stock_quantity) FROM books GROUP BY released_year;
+SELECT author_fname, author_lname, AVG(pages) FROM books GROUP BY author_lname, author_fname;
