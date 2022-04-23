@@ -157,3 +157,20 @@ SELECT author_fname, author_lname, SUM(pages) FROM books GROUP BY author_lname, 
 Using AVG:
 SELECT released_year, AVG(stock_quantity) FROM books GROUP BY released_year;
 SELECT author_fname, author_lname, AVG(pages) FROM books GROUP BY author_lname, author_fname;
+
+
+Using CURDATE(), CURTIME(), NOW():
+INSERT INTO people (name, birthdate, birthtime, birthdt) VALUES ("Test", CURDATE(), CURTIME(), NOW());
+
+
+Formatting dates:
+SELECT name, birthdate, DAY(birthdate) FROM people;
+SELECT name, birthtime, MINUTE(birthtime) FROM people;
+SELECT DATE_FORMAT(birthdt, '%m/%d/%Y') FROM people;
+
+
+Date arithmetic:
+SELECT name, birthdate, DATEDIFF(NOW(), birthdate) FROM people;
+SELECT birthdt, DATE_ADD(birthdt, INTERVAL 1 MONTH) FROM people;
+SELECT birthdt, birthdt + INTERVAL 1 MONTH FROM people;
+SELECT birthdt, birthdt + INTERVAL 15 MONTH + INTERVAL 10 HOUR FROM people;
